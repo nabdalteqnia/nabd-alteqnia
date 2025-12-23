@@ -1,0 +1,64 @@
+{
+  "name": "نبض التقنية",
+  "short_name": "نبض التقنية",
+  "description": "متجر الإلكترونيات والخردوات",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a237e",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["shopping", "business"],
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192/1a237e/ffffff?text=نبض",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512/1a237e/ffffff?text=نبض+التقنية",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://via.placeholder.com/1280x720/1a237e/ffffff?text=متجر+نبض+التقنية",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "تصفح المنتجات",
+      "short_name": "المنتجات",
+      "description": "عرض جميع المنتجات",
+      "url": "/#products",
+      "icons": [
+        {
+          "src": "https://via.placeholder.com/96x96/1a237e/ffffff?text=📦",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "اتصل بنا",
+      "short_name": "اتصل",
+      "description": "تواصل معنا عبر واتساب",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "https://via.placeholder.com/96x96/25D366/ffffff?text=💬",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

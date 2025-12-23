@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>نبض التقنية - متجر الإلكترونيات والخردوات</title>
+    
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- الأنماط -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="نبض التقنية">
+    <meta name="theme-color" content="#1a237e">
+    <meta name="msapplication-navbutton-color" content="#1a237e">
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="متجر نبض التقنية - أفضل الأجهزة الإلكترونية وقطع الخردوات بأسعار منافسة">
+    <meta name="keywords" content="إلكترونيات, خردوات, قطع غيار, أجهزة ذكية, صيانة, اليمن">
+    <meta name="author" content="نبض التقنية">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="نبض التقنية - متجر الإلكترونيات والخردوات">
+    <meta property="og:description" content="اكتشف أفضل الأجهزة الإلكترونية وقطع الخردوات بجودة عالية وأسعار تنافسية">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="نبض التقنية">
+    <meta name="twitter:description" content="متجر متخصص في الإلكترونيات والخردوات">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+    
+    <style>
+        /* شاشة التحميل */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a237e 0%, #311b92 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        #preloader h2 {
+            color: white;
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+        
+        #preloader p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- شاشة التحميل -->
+    <div id="preloader">
+        <div class="loader"></div>
+        <h2><i class="fas fa-microchip"></i> نبض التقنية</h2>
+        <p>جاري تحميل المتجر...</p>
+    </div>
+
+    <!-- زر القائمة المتنقلة -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <!-- الشعار -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>نبض التقنية</h1>
+                    <p>متجر الإلكترونيات والخردوات</p>
+                </div>
+            </div>
+            
+            <!-- القائمة الرئيسية -->
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#products" class="nav-link"><i class="fas fa-box"></i> المنتجات</a></li>
+                    <li><a href="#categories" class="nav-link"><i class="fas fa-list"></i> الأقسام</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> عنا</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-phone"></i> اتصل بنا</a></li>
+                </ul>
+                
+                <!-- زر الواتساب -->
+                <a href="https://wa.me/967778122378?text=مرحباً، أريد الاستفسار عن المنتجات" 
+                   class="whatsapp-btn" target="_blank" aria-label="تواصل عبر واتساب">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>تواصل معنا</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القائمة الجانبية للموبايل -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-bolt"></i>
+                <h2>نبض التقنية</h2>
+            </div>
+            <button class="close-sidebar" id="closeSidebar" aria-label="إغلاق القائمة">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="sidebar-links">
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="#products"><i class="fas fa-box"></i> المنتجات</a></li>
+            <li><a href="#categories"><i class="fas fa-list"></i> الأقسام</a></li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> عنا</a></li>
+            <li><a href="#contact"><i class="fas fa-phone"></i> اتصل بنا</a></li>
+            <li class="divider"></li>
+            <li><a href="https://wa.me/967778122378" target="_blank" class="whatsapp-link">
+                <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+            </a></li>
+            <li><a href="admin.html" class="admin-link">
+                <i class="fas fa-cog"></i> دخول المدير
+            </a></li>
+        </ul>
+    </div>
+    
+    <!-- طبقة التعتيم -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>أفضل التقنيات بأسعار تنافسية</h2>
+                <p>اكتشف مجموعة واسعة من الأجهزة الإلكترونية وقطع الخردوات بجودة عالية وأسعار مناسبة لجميع العملاء</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i> تصفح المنتجات
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-headset"></i> احصل على استشارة
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="إلكترونيات متنوعة" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأقسام -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-tags"></i> أقسام المتجر</h2>
+                <p>اختر من بين مجموعة متنوعة من الأقسام المناسبة لاحتياجاتك</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-category="electronics">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>الأجهزة الإلكترونية</h3>
+                    <p>هواتف ذكية، أجهزة لوحية، كمبيوترات، أجهزة منزلية ذكية</p>
+                    <span class="category-count">15 منتج</span>
+                </div>
+                
+                <div class="category-card" data-category="hardware">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>قطع الخردوات</h3>
+                    <p>أدوات صيانة، أسلاك، مفكات، ملاقيط، قطع إلكترونية</p>
+                    <span class="category-count">22 منتج</span>
+                </div>
+                
+                <div class="category-card" data-category="accessories">
+                    <div class="category-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>ملحقات إلكترونية</h3>
+                    <p>شواحن، سماعات، أغطية حماية، كابلات، بطاريات</p>
+                    <span class="category-count">18 منتج</span>
+                </div>
+                
+                <div class="category-card" data-category="new">
+                    <div class="category-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>واصل حديثاً</h3>
+                    <p>أحدث المنتجات التي وصلت حديثاً إلى المتجر</p>
+                    <span class="category-count">8 منتج</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-box-open"></i> منتجاتنا</h2>
+                <p>اكتشف أفضل المنتجات بأفضل الأسعار</p>
+                
+                <!-- أزرار التصفية -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="electronics">إلكترونيات</button>
+                    <button class="filter-btn" data-filter="hardware">خردوات</button>
+                    <button class="filter-btn" data-filter="accessories">ملحقات</button>
+                    <button class="filter-btn" data-filter="new">واصل جديد</button>
+                </div>
+            </div>
+            
+            <!-- شبكة المنتجات -->
+            <div class="products-grid" id="productsGrid">
+                <div class="loading-products">
+                    <div class="spinner"></div>
+                    <p>جاري تحميل المنتجات...</p>
+                </div>
+            </div>
+            
+            <!-- زر تحميل المزيد -->
+            <div class="load-more-container">
+                <button class="btn btn-outline" id="loadMore">
+                    <i class="fas fa-sync-alt"></i> تحميل المزيد
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عنا -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2><i class="fas fa-info-circle"></i> عن متجر نبض التقنية</h2>
+                    <p>نحن متجر متخصص في بيع الأجهزة الإلكترونية وقطع الخردوات بجودة عالية وأسعار تنافسية. نعمل على توفير أفضل المنتجات لعملائنا الكرام مع ضمان الجودة والكفاءة.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>توصيل سريع</h4>
+                                <p>نوصل طلباتك لجميع مناطق الجمهورية خلال 2-5 أيام عمل</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>جودة مضمونة</h4>
+                                <p>جميع منتجاتنا أصلية ومضمونة مع فترة ضمان مناسبة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>دعم فني متكامل</h4>
+                                <p>فريق دعم فني متاح على مدار الساعة لخدمتكم</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>أسعار مناسبة</h4>
+                                <p>نقدم أفضل الأسعار في السوق مع عروض وتخفيضات دائمة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="عن المتجر" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم اتصل بنا -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-phone-alt"></i> تواصل معنا</h2>
+                <p>نحن هنا لخدمتك على مدار الساعة</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>الواتساب</h4>
+                            <p dir="ltr">+967 778 122 378</p>
+                            <a href="https://wa.me/967778122378" class="whatsapp-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i> ابدأ محادثة
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>الهاتف</h4>
+                            <p dir="ltr">+967 770 271 960</p>
+                            <a href="tel:+967770241960" class="phone-link">
+                                <i class="fas fa-phone"></i> اتصل الآن
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>ساعات العمل</h4>
+                            <p>من الساعة 9 صباحاً حتى 11 مساءً</p>
+                            <p>طوال أيام الأسبوع</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>الموقع</h4>
+                            <p> اليمن - الضالع - مريس </p>
+                            <p>نوصلك اينما كنت </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>أرسل لنا استفسارك</h3>
+                    <form id="inquiryForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="اسمك الكريم" required>
+                            <div class="form-error" id="nameError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="رقم هاتفك" required>
+                            <div class="form-error" id="phoneError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني (اختياري)">
+                            <div class="form-error" id="emailError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="رسالتك أو استفسارك" rows="4" required></textarea>
+                            <div class="form-error" id="messageError"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> إرسال الاستفسار
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h3>نبض التقنية</h3>
+                            <p>متجر الإلكترونيات والخردوات</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        وجهتك الأولى لشراء جميع احتياجاتك من الإلكترونيات وقطع الخردوات بجودة عالية وأسعار منافسة.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/967778122378" class="social-icon whatsapp" target="_blank" aria-label="واتساب">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="tel:+967770241960" class="social-icon phone" aria-label="هاتف">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="mailto:nabdalteqnia@gmail.com" class="social-icon email" aria-label="بريد إلكتروني">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#categories">الأقسام</a></li>
+                        <li><a href="#about">عن المتجر</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                        <li><a href="admin.html" class="admin-footer-link">دخول المدير</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section" dir="ltr">
+                    <h4>معلومات الاتصال</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> اليمن - الضالع - مريس</li>
+                        <li><i class="fas fa-phone"></i> +967 778 122 378</li>
+                        <li><i class="fas fa-envelope"></i> nabdalteqnia@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> 9:00 ص - 11:00 م</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; <span id="currentYear"></span> نبض التقنية</p>
+                <p class="developer">تم التطوير بواسطة <span>فريق نبض التقنية</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر واتساب عائم -->
+    <a href="https://wa.me/967778122378" class="whatsapp-float" target="_blank" aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+        <span class="float-text">اطلب الآن</span>
+    </a>
+
+    <!-- زر العودة للأعلى -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- نموذج تفاصيل المنتج -->
+    <div class="modal" id="productModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modalTitle">تفاصيل المنتج</h3>
+                <button class="modal-close" id="modalClose" aria-label="إغلاق">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- محتوى تفاصيل المنتج -->
+            </div>
+        </div>
+    </div>
+
+    <!-- السكريبتات -->
+    <script src="js/main.js"></script>
+    <script>
+        // تهيئة Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registered');
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed:', error);
+                    });
+            });
+        }
+        
+        // إخفاء شاشة التحميل
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
