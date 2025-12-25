@@ -204,10 +204,11 @@ const App = {
                     <p class="product-description">${product.description}</p>
                     
                     <div class="product-price">
-                        ${product.price} ريال
+                        ${product.price} : ${product.coin} 
                         ${product.originalPrice && product.originalPrice > product.price 
-                            ? `<span class="original-price">${product.originalPrice} ريال</span>` 
+                            ? `<span class="original-price">${product.originalPrice} </span>` 
                             : ''}
+                            <span class="original-price">${product.coin} </span>
                     </div>
                     
                     <div class="product-features">
